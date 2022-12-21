@@ -5,7 +5,7 @@ const todoCompleted = document.querySelector('.todo-completed');
 const headerBtn = document.querySelector('.header-button')
 
 
-const toDoData = [];
+let toDoData = [];
 
 
 const stopSubmit = function () {
@@ -20,7 +20,9 @@ const checkChange = function () {
 };
 
 const start = function () {
-    toDoData.push(JSON.parse(localStorage.getItem('userData')))
+    if (localStorage.getItem('userData')) {
+        toDoData = JSON.parse(localStorage.getItem('userData'));
+    }
 
     stopSubmit();
     checkChange();
