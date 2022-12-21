@@ -72,7 +72,7 @@ todoControl.addEventListener('submit', function (event) {
 
 
     const newToDo = {
-        text: headerInput.value,
+        text: headerInput.value.trim(),
         completed: false
     }
 
