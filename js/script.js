@@ -56,11 +56,13 @@ function render() {
 
         li.querySelector('.todo-complete').addEventListener('click', function () {
             item.completed = !item.completed;
+            localStorage.setItem('userData', JSON.stringify(toDoData));
             render();
         });
 
         li.querySelector('.todo-remove').addEventListener('click', function () {
             toDoData.splice(index, 1);
+            localStorage.setItem('userData', JSON.stringify(toDoData));
             render()
         })
 
@@ -81,7 +83,7 @@ todoControl.addEventListener('submit', function (event) {
 
     render();
 
-    localStorage.setItem('userData', JSON.stringify(toDoData))
+    localStorage.setItem('userData', JSON.stringify(toDoData));
 });
 
 
